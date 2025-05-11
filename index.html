@@ -3,44 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
     <title>Weather App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input
-          type="text"
-          placeholder="Enter a city..."
-          id="search-input"
-          class="search-input"
-        />
-        <input type="submit" value="Search" class="btn-submit" />
-      </form>
-    </header>
-    <main>
-      <div class="weather-container">
-        <div class="weather-info">
-          <h1 class="city-name">Paris</h1>
-          <p>
-            <span class="current-day">Tuesday 14:49, scattered clouds</span>
-            <br />
-            <span class="current-weather-details"
-              >Humidity: 66%, Wind: 3.13km/h</span
-            >
-          </p>
+    <div class="weather-app">
+      <header>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter a city..."
+            id="search-input"
+            class="search-input"
+          />
+          <input type="submit" value="Search" class="btn-submit" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-container">
+          <div class="weather-info">
+            <h1 class="city-name">Paris</h1>
+            <p>
+              <span class="current-day">Tuesday 14:49, scattered clouds</span>
+              <br />
+              <span class="current-weather-details"
+                >Humidity: 66%, Wind: 3.13km/h</span
+              >
+            </p>
+          </div>
+          <div class="weather-icon">☁️ 15°C</div>
         </div>
-        <div class="weather-icon">☁️ 15°C</div>
-      </div>
-    </main>
-    <footer>
-      <p>Built by Charnelle Darlington</p>
-      <a href="https://github.com/NellieDarling" target="_blank"
-        >Charnelle Darlington</a
-      >
-      <a href="https://github.com/NellieDarling/Weather-App" target="_blank"
-        >GitHub</a
-      >
-      <a href="https://umbrella-ready.netlify.app/" target="_blank">Netlify</a>
-    </footer>
+      </main>
+      <footer>
+        <p>Built by Charnelle Darlington</p>
+        <a href="https://github.com/NellieDarling" target="_blank"
+          >Charnelle Darlington</a
+        >
+        <a href="https://github.com/NellieDarling/Weather-App" target="_blank"
+          >GitHub</a
+        >
+        <a href="https://umbrella-ready.netlify.app/" target="_blank"
+          >Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
