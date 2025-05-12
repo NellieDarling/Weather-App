@@ -84,13 +84,18 @@ header {
   color: #f03e3e;
 }
 
-.weather-icon {
-  font-size: 38px;
-  margin: 10px 10px 0 0;
+.weather-display {
+  display: flex;
+  align-items: center;
 }
 
-.weather-temperature {
-  font-size: 62px;
+.weather-icon {
+  margin: 15px 0 0;
+}
+
+.weather-temperature,
+.weather-unit {
+  font-size: 88px;
   font-weight: bold;
 }
 
