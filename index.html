@@ -17,6 +17,7 @@
             placeholder="Enter a city..."
             id="search-input"
             class="search-input"
+            required
           />
           <input type="submit" value="Search" class="btn-submit" />
         </form>
@@ -25,9 +26,11 @@
         <section class="weather">
           <div class="weather-container">
             <div class="weather-info">
-              <h1 class="city-name">Paris</h1>
+              <h1 class="city-name" id="city">Paris</h1>
               <p class="weather-details">
-                <span class="current-day">Tuesday 14:49, scattered clouds</span>
+                <span class="current-day" id="day">Tuesday</span>
+                <span class="current-time" id="time">14:49</span>, scattered
+                clouds
                 <br />
                 <span class="current-weather-details"
                   >Humidity: <strong>66%</strong>, Wind:
