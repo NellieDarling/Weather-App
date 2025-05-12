@@ -26,21 +26,27 @@
         <section class="weather">
           <div class="weather-container">
             <div class="weather-info">
-              <h1 class="city-name" id="city">Paris</h1>
+              <h1 class="city-name" id="city"></h1>
               <p class="weather-details">
                 <span class="current-day" id="day">Tuesday</span>
-                <span class="current-time" id="time">14:49</span>, scattered
-                clouds
+                <span class="current-time" id="time">14:49</span>,
+                <span id="condition">scattered clouds</span>
                 <br />
-                <span class="current-weather-details"
-                  >Humidity: <strong>66%</strong>, Wind:
-                  <strong>3.13km/h</strong></span
-                >
+                Humidity: <span id="humidity">66</span><span>%</span>, Wind:
+                <span id="wind">3.13</span><span> km/h</span>
               </p>
             </div>
             <div class="weather-display">
-              <span class="weather-icon">☁️</span>
-              <span class="weather-temperature">15°C</span>
+              <span class="weather-icon">
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+                  alt="Weather icon"
+                  id="icon"
+                  width="75"
+                />
+              </span>
+              <span class="weather-temperature" id="temperature"></span>
+              <span class="weather-unit">°C</span>
             </div>
           </div>
         </section>
