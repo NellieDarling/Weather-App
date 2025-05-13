@@ -80,7 +80,7 @@ header {
   line-height: 28px;
 }
 
-.current-weather-details strong {
+.weather-details span:nth-child(n + 5) {
   color: #f03e3e;
 }
 
@@ -96,6 +96,36 @@ header {
 .weather-temperature,
 .weather-unit {
   font-size: 88px;
+  font-weight: bold;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex: wrap;
+  margin: 25px 0;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.forecast-day {
+  font-size: 18px;
+  color: #212529;
+}
+
+.forecast-temperatures {
+  display: flex;
+  gap: 15px;
+}
+
+.forecast-high,
+.forecast-low {
+  color: #f03e3e;
   font-weight: bold;
 }
 
