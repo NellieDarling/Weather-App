@@ -13,6 +13,7 @@ function displayWeatherInfo(res) {
   conditionEl.innerHTML = res.data.condition.description;
   getCurrentDay();
   getCurrentTime();
+  getForecast(res.data.city);
 }
 
 function getCurrentDay() {
@@ -71,6 +72,7 @@ function displayForecast(res) {
     "Saturday",
   ];
   forecastEl.innerHTML = "";
+
   daysOfWeek.forEach((day) => {
     forecastEl.innerHTML += `
     <div class="forecast-item">
@@ -90,5 +92,3 @@ const searchFormEl = document.querySelector("#search-form");
 searchFormEl.addEventListener("submit", handleSearchSubmit);
 
 searchCity("New York");
-getForecast("New York");
-displayForecast();
