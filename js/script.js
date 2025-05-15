@@ -53,7 +53,42 @@ function handleSearchSubmit(event) {
   searchCity(searchInputEl.value);
 }
 
+function getForecast(city) {
+  const apiKey = "9t2b4f04o4ba653b1355ab0efac7c3eb";
+  const apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(res) {
+  let forecastEl = document.querySelector("#forecast-container");
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  forecastEl.innerHTML = "";
+  daysOfWeek.forEach((day) => {
+    forecastEl.innerHTML += `
+    <div class="forecast-item">
+      <p class="forecast-day">${day}</p>
+      <span class="forecast-weather-icon">☁️</span>
+      <div class="forecast-temperatures">
+        <p class="forecast-high">15°</p>
+        <p class="forecast-low">9°</p>
+      </div>
+    </div>
+  `;
+  });
+  forecastEl;
+}
+
 const searchFormEl = document.querySelector("#search-form");
 searchFormEl.addEventListener("submit", handleSearchSubmit);
 
 searchCity("New York");
+getForecast("New York");
+displayForecast();
