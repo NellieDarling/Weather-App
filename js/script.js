@@ -62,6 +62,29 @@ function getForecast(city) {
 
 function displayForecast(res) {
   let forecastEl = document.querySelector("#forecast-container");
+  forecastEl.innerHTML = "";
+
+  res.data.daily.forEach((day, index) => {
+    if (index < 5) {
+      forecastEl.innerHTML += `
+      <div class="forecast-item">
+        <p class="forecast-day">${formatDate(day.time)}</p>
+        <img src="${day.condition.icon_url}" alt="${
+        day.condition.description
+      }" class="forecast-weather-icon" />
+        <div class="forecast-temperatures">
+          <p class="forecast-high">${Math.round(day.temperature.maximum)}°</p>
+          <p class="forecast-low">${Math.round(day.temperature.minimum)}°</p>
+        </div>
+      </div>
+    `;
+    }
+  });
+  forecastEl;
+}
+
+function formatDate(timestamp) {
+  const date = new Date(timestamp * 1000);
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -71,21 +94,7 @@ function displayForecast(res) {
     "Friday",
     "Saturday",
   ];
-  forecastEl.innerHTML = "";
-
-  daysOfWeek.forEach((day) => {
-    forecastEl.innerHTML += `
-    <div class="forecast-item">
-      <p class="forecast-day">${day}</p>
-      <span class="forecast-weather-icon">☁️</span>
-      <div class="forecast-temperatures">
-        <p class="forecast-high">15°</p>
-        <p class="forecast-low">9°</p>
-      </div>
-    </div>
-  `;
-  });
-  forecastEl;
+  return daysOfWeek[date.getDay()];
 }
 
 const searchFormEl = document.querySelector("#search-form");
